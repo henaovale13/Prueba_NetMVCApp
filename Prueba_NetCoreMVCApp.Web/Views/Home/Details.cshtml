@@ -1,0 +1,55 @@
+﻿@model Producto
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>eBay - Productos para el hogar</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>eBay</h1>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
+                <li><a href="#">Buscar</a></li>
+                <li><a href="#">Detalles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="product-details-section">
+            <h2>Detalles del producto</h2>
+            <div class="container">
+                <div class="left-column">
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                </div>
+                <div class="right-column">
+                    <img src="@Model.ImagenUrl" alt="@Model.Nombre" />
+                </div>
+                <div class="product-description">
+                    <h3>@Model.Nombre</h3>
+                    <p>@Model.Descripcion</p>
+                    <p>Estado: @Model.Estado</p>
+                    <p>Cantidad: @Model.Cantidad</p>
+                    <p>Precio: @Model.Precio</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 eBay. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+

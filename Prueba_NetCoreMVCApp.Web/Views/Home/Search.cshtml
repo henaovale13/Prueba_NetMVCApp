@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Producto>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>eBay - Productos para el hogar</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>eBay</h1>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Inicio</a></li>
+                <li><a href="#">Buscar</a></li>
+                <li><a href="#">Detalles</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="products-section">
+            <h2>Resultados de búsqueda</h2>
+            <ul>
+                @foreach (var product in Model)
+                {
+                    <div class="product-card">
+                        <img src="@product.ImagenUrl" alt="@product.Nombre" />
+                        <h3>@product.Nombre</h3>
+                        <p>@product.Precio</p>
+                        <a asp-controller="Home" asp-action="Details" asp-route-imageUrl="@product.ImagenUrl">
+                            Ver detalles
+                        </a>
+                    </div>
+                }
+            </ul>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 eBay. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
